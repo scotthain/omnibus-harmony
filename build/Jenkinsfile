@@ -1,0 +1,13 @@
+node {
+   stage('Preparation') { // for display purposes
+      git changelog: false, poll: false, url: 'https://github.com/scotthain/omnibus-harmony.git'
+   }
+   stage('Build') {
+      // Run the maven build
+      if (isUnix()) {
+         sh "echo 'hey cool i am unix'"
+      } else {
+         bat(/echo 'hey cool i am windows'/)
+      }
+   }
+}
