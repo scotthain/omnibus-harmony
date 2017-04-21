@@ -3,10 +3,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''. load-omnibus-toolchain.sh
+        if (isUnix()) {
+          sh '''. load-omnibus-toolchain.sh
 cd omnibus-harmony
-bundle install --without development 
+bundle install --without development
 bundle exec omnibus build harmony -l debug'''
+        }
       }
     }
   }
