@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -p omnibus-toolchain'
+        sh '''. load-omnibus-toolchain.sh
+cd omnibus-harmony
+bundle install --without development 
+bundle exec omnibus build harmony -l debug'''
       }
     }
   }
