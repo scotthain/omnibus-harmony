@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        if (isUnix()) {
+        node('wingdings') {
           sh '''. load-omnibus-toolchain.sh
 cd omnibus-harmony
 bundle install --without development
