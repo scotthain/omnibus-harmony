@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Prep') {
+            steps {
+                git url: 'https://github.com/scotthain/omnibus-harmony.git', branch: 'whatisthis'
+                script {
+                    config = readYaml file: '.omnibus/config.yml'
+                    echo config.build.toString()
+                    echo config.test.toString()
+                }
+            }
+        }
+    }
+}
