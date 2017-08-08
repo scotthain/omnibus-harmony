@@ -2,32 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
-
-pipeline {
-    agent any
-
-    stages {
-        stage('Clone') {
+        stage('Prep') {
             steps {
                 git url: 'https://github.com/scotthain/omnibus-harmony.git', branch: 'whatisthis'
-                readYaml: '.omnibus/config.yml'
+                script {
+                    config = readYaml file: '.omnibus/config.yml'
+                    echo config.build.toString()
+                    echo config.test.toString()
+                }
             }
         }
     }
