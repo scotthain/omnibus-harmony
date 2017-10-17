@@ -1,0 +1,89 @@
+platforms:
+  architectures:
+  # x86_64
+  - arch: x86_64
+    operating_systems:
+    - name: debian
+      versions:
+      - '7'
+    - name: rhel
+      versions:
+      - '5'
+      - '6'
+      - '7'
+    - name: freebsd
+      versions:
+      - '10'
+    - name: macos
+      versions:
+      - '10.10'
+    - name: sles
+      versions:
+      - '11'
+      - '12'
+    - name: solaris
+      versions:
+      - '10'
+      - '11'
+    - name: ubuntu
+      versions:
+      - '14.04'
+    - name: windows
+      versions:
+      - '2012r2'
+  # i386
+  - arch: i386
+    operating_systems:
+    - name: debian
+      versions:
+      - '7'
+    - name: rhel
+      versions:
+      - '5'
+      - '6'
+    - name: ubuntu
+      versions:
+      - '14.04'
+    - name: windows
+      versions:
+      - '2012r2'
+  # SPARC
+  - arch: sparc
+    operating_systems:
+    - name: solaris
+      versions:
+      - '10'
+      - '11'
+  # powerpc
+  - arch: powerpc
+    operating_systems:
+    - name: aix
+      versions:
+      - '6.1'
+  # ppc64(be)
+  - arch: ppc64
+    operating_systems:
+    - name: rhel
+      versions:
+      - 7
+  # ppc64le
+  - arch: ppc64le
+    operating_systems:
+    - name: rhel
+      versions:
+      - 7
+    - name: ubuntu
+      versions:
+      - '14.04'
+  # s390x
+  - arch: s390x
+    operating_systems:
+    - name: rhel
+      versions:
+      - 6
+      - 7
+    - name: sles
+      versions:
+      - '10'
+      - '11'
+
