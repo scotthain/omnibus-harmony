@@ -1,5 +1,5 @@
 phases: # arbitrary
-  zbuild: # phases operate in order - 1st
+  build: # phases operate in order - 1st
     terraform: # this is a keyword 
       - single_deploy # this is a directory in terraform/single_deploy
       - multi_deploy # this is a directory in terraform/single_deploy
